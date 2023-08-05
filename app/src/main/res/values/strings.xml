@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Eldokana</string>
+
+    <string name="login_to_your_account">Ahlan! Welcome back!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="email">Email</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="create_new">Create new</string>
+
+    <string name="enter_your_email_address_and_we_ll_send_you_a_link_to_reset_your_password">Enter your email address and we\'ll send you a link to reset your password</string>
+    <string name="reset_password">Reset Password</string>
+
+
+    <string name="create_an_account">Create an Account</string>
+    <string name="you_are_now_logged_in">You are now logged in.</string>
+    <string name="invalid">Invalid credentials. Please check your email and password.</string>
+    <string name="hide_password">Hide Password</string>
+    <string name="show_password">Show Password</string>
+
+
+    <string name="password_reset_email_sent_please_check_your_email_for_further_instructions">Password reset email sent. Please check your email for further instructions.</string>
+    <string name="or">or</string>
 </resources>

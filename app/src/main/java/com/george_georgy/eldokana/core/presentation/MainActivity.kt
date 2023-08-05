@@ -1,29 +1,32 @@
-package com.george_georgy.eldokana
+package com.george_georgy.eldokana.core.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.george_georgy.eldokana.ui.theme.EldokanaTheme
+import com.george_georgy.eldokana.core.presentation.navigation.Navigation
+import com.george_georgy.eldokana.core.presentation.ui.theme.EcommTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            EldokanaTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-
-                ) {
+            EcommTheme {
+                Surface {
+                    Navigation()
                 }
             }
         }
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    EcommTheme {
+        Navigation()
+    }
+}

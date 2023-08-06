@@ -6,7 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.george_georgy.eldokana.core.presentation.navigation.Navigation
+import androidx.navigation.compose.rememberNavController
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.RootNavigationGraph
 import com.george_georgy.eldokana.core.presentation.ui.theme.EcommTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +17,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             EcommTheme {
                 Surface {
-                    Navigation()
+                //    Navigation()
+                    RootNavigationGraph(navController = rememberNavController())
                 }
             }
         }
@@ -27,6 +29,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     EcommTheme {
-        Navigation()
+        //Navigation()
     }
 }

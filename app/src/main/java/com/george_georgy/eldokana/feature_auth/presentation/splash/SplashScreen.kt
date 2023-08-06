@@ -66,7 +66,7 @@ fun SplashScreen(
                     val eventState = viewModel.eventState.value
 
                     if (eventState) {
-                        onUserFoundNavigation()
+                        onUserNotFoundNavigation()
                     } else {
                         onUserNotFoundNavigation()
                     }

@@ -1,4 +1,4 @@
-package com.george_georgy.shopnow.feature_home_products.presentation
+package com.george_georgy.eldokana.feature_home_products.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun HomeScreen(
-    onNavigation: () -> Unit
+    onItemDetails: () -> Unit
 ) {
 
     Surface {
@@ -23,9 +23,9 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(onClick = {
-                onNavigation()
+                onItemDetails()
             }) {
-                Text("Logout")
+                Text("Product details")
             }
         }
     }

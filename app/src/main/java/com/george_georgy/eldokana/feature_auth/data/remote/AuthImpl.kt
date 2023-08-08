@@ -10,6 +10,7 @@ import io.ktor.client.features.ClientRequestException
 import io.ktor.client.features.RedirectResponseException
 import io.ktor.client.features.ServerResponseException
 import io.ktor.client.request.*
+import io.ktor.client.utils.EmptyContent.contentType
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 
@@ -18,30 +19,12 @@ class AuthImpl(
 ) : AuthApi {
     override suspend fun loginUser(loginRequest: LoginRequest): LoginResponse {
 
-        return try {
-            client.post<LoginResponse> {
+            return client.post<LoginResponse> {
                 url("${BASE_URL}auth/login")
                 contentType(ContentType.Application.Json)
                 body = loginRequest
             }
-        } catch(e: RedirectResponseException) {
-            // 3xx - responses
-            println("Error: ${e.response.status.description}")
-            LoginResponse("")
-        } catch(e: ClientRequestException) {
-            // 4xx - responses
-            println("Error: ${e.response.status.description}")
-            LoginResponse("")
 
-        } catch(e: ServerResponseException) {
-            // 5xx - responses
-            println("Error: ${e.response.status.description}")
-            LoginResponse("")
-
-        } catch(e: Exception) {
-            println("Error: ${e.message}")
-            LoginResponse("")
-        }
     }
 
 

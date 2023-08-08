@@ -33,6 +33,7 @@ fun AuthPasswordTextField(
     modifier: Modifier = Modifier,
     label: String,
     value: String,
+    errorValue : String?,
     onValueChange: (String) -> Unit,
     imageVector: ImageVector,
     isError: Boolean,
@@ -41,11 +42,6 @@ fun AuthPasswordTextField(
     ) {
     val uiColor = if (isSystemInDarkTheme()) Color.White else Color.Black
 
-    /*
-     val password = remember{
-       mutableStateOf("")
-     }
-     */
 
      val passwordVisible = remember{
        mutableStateOf(false)
@@ -69,6 +65,13 @@ fun AuthPasswordTextField(
             Icon(
                 imageVector = imageVector,
                 contentDescription = ""
+            )
+        },
+
+        supportingText = {
+            Text(
+                text = errorValue ?: "",
+                color = Color.Red
             )
         },
         isError = isError,

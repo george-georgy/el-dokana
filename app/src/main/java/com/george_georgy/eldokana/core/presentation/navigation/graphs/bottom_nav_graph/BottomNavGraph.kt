@@ -18,13 +18,17 @@ fun BottomNavGraph(navController: NavHostController) {
     ) {
         composable(DokanaBottomBarRoutes.Home.route) {
             HomeScreen(
+                /*
                 onItemDetails = {
 
                     navController.navigate(DetailsScreen.Information.route) {
                         popUpTo(0)
                     }
 
+
+
                 }
+            */
             )
         }
 

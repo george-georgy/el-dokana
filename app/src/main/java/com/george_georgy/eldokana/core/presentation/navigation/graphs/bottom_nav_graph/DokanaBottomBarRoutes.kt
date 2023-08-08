@@ -5,6 +5,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class DokanaBottomBarRoutes(
@@ -27,7 +28,7 @@ sealed class DokanaBottomBarRoutes(
     object Cart : DokanaBottomBarRoutes(
         route = "CART",
         title = "Cart",
-        icon = Icons.Default.Settings
+        icon = Icons.Default.ShoppingCart
     )
 
     object Wishlist : DokanaBottomBarRoutes(

@@ -11,6 +11,7 @@ import com.george_georgy.eldokana.feature_auth.util.AuthResult
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 class LoginViewModel(
@@ -25,7 +26,7 @@ class LoginViewModel(
 
     // result events from viewModel to ui
     private val _authResultEventChannel = Channel<AuthResult<Unit>>()
-    val authEvent = _authResultEventChannel.receiveAsFlow()
+    val authResultEventChannel = _authResultEventChannel.receiveAsFlow()
 
     // events from ui to viewModel (email,pass text fields changes and login button)
     fun onFormEvent(event: LoginFormEvent) {

@@ -35,10 +35,11 @@ fun DokanaBottomNav(navController: NavHostController = rememberNavController()) 
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         DokanaBottomBarRoutes.Home,
-        DokanaBottomBarRoutes.Profile,
         DokanaBottomBarRoutes.Cart,
         DokanaBottomBarRoutes.Wishlist,
-    )
+        DokanaBottomBarRoutes.Profile,
+
+        )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
@@ -76,7 +77,7 @@ fun RowScope.AddItem(
             it.route == screen.route
         } == true,
         colors = NavigationBarItemDefaults.colors(
-            selectedIconColor = Color .Green,
+            selectedIconColor = Color.Black,
             unselectedIconColor = Color.Gray
         ),
         onClick = {

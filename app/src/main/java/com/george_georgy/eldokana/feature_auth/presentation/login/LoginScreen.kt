@@ -34,7 +34,6 @@ import com.george_georgy.eldokana.feature_auth.presentation.components.AuthPassw
 import com.george_georgy.eldokana.feature_auth.presentation.components.AuthTextField
 import com.george_georgy.eldokana.feature_auth.presentation.components.ClickableAuthText
 import com.george_georgy.eldokana.feature_auth.presentation.components.DividerTextComponent
-import com.george_georgy.eldokana.feature_auth.presentation.components.ErrorAuthBox
 import com.george_georgy.eldokana.feature_auth.presentation.components.HeadingTextComponent
 import com.george_georgy.eldokana.feature_auth.util.AuthResult
 import org.koin.androidx.compose.getViewModel
@@ -56,7 +55,7 @@ fun LoginScreen(
 
 
     LaunchedEffect(key1 = context) {
-        loginViewModel.authEvent.collect { event ->
+        loginViewModel.authResultEventChannel.collect { event ->
             when (event) {
                 is AuthResult.Authorized -> {
                     onLoginSuccess()
@@ -108,13 +107,12 @@ fun LoginScreen(
                 onValueChange = {
                     loginViewModel.onFormEvent(LoginFormEvent.UsernameChanged(it))
                 },
-                imageVector = Icons.Default.Email,
+                errorValue = state.usernameError,
                 isError = state.usernameError != null,
+                imageVector = Icons.Default.Email,
             )
 
-            ErrorAuthBox(
-                error = state.usernameError
-            )
+
 
             AuthPasswordTextField(
                 modifier = Modifier.fillMaxWidth(),
@@ -124,14 +122,13 @@ fun LoginScreen(
                 onValueChange = {
                     loginViewModel.onFormEvent(LoginFormEvent.PasswordChanged(it))
                 },
-                imageVector = Icons.Default.Lock,
+                errorValue = state.passwordError,
                 isError = state.passwordError != null,
+                imageVector = Icons.Default.Lock,
 
                 )
 
-            ErrorAuthBox(
-                error = state.passwordError
-            )
+
 
             Text(
                 modifier = Modifier

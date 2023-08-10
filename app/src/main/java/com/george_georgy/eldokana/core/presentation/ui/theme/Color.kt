@@ -15,6 +15,8 @@ val DarkBlue = Color(0xFF00427A)
 val LightBlue = Color(0xFF75B7EE)
 val MyLightGray = Color(0xFFECECEC)
 
+val green = Color(0xFF01cd98)
+val greenLight = Color(0xFF00FFBD)
 
 
 val ColorScheme.focusedTextFieldText

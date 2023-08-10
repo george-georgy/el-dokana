@@ -25,19 +25,22 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun DokanaBottomNav(navController: NavHostController = rememberNavController()) {
     Scaffold(
-        bottomBar = { BottomBar(navController = navController) }
+        bottomBar = { DokanaBottomBar(navController = navController) }
     ) {
         BottomNavGraph(navController = navController)
     }
 }
 
+
+
 @Composable
-fun BottomBar(navController: NavHostController) {
+fun DokanaBottomBar(
+    navController: NavHostController) {
     val screens = listOf(
-        DokanaBottomBarRoutes.Home,
-        DokanaBottomBarRoutes.Cart,
-        DokanaBottomBarRoutes.Wishlist,
-        DokanaBottomBarRoutes.Profile,
+        BottomBarRoutes.Home,
+        BottomBarRoutes.Cart,
+        BottomBarRoutes.Wishlist,
+        BottomBarRoutes.Profile,
 
         )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -59,7 +62,7 @@ fun BottomBar(navController: NavHostController) {
 
 @Composable
 fun RowScope.AddItem(
-    screen: DokanaBottomBarRoutes,
+    screen: BottomBarRoutes,
     currentDestination: NavDestination?,
     navController: NavHostController
 ) {
@@ -85,6 +88,7 @@ fun RowScope.AddItem(
                 popUpTo(navController.graph.findStartDestination().id)
                 launchSingleTop = true
             }
-        }
+        },
+        alwaysShowLabel = false
     )
 }

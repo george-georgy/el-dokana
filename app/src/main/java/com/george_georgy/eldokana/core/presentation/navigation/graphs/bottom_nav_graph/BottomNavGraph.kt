@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.Graphs
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.details_graph.DetailsScreen
 import com.george_georgy.eldokana.feature_home_products.presentation.HomeScreen
 
 @Composable
@@ -14,10 +15,10 @@ fun BottomNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
         route = Graphs.HOME,
-        startDestination = DokanaBottomBarRoutes.Home.route
+        startDestination = BottomBarRoutes.Home.route
     ) {
-        composable(DokanaBottomBarRoutes.Home.route) {
-            HomeScreen(
+        composable(BottomBarRoutes.Home.route) {
+            HomeScreen(navController
                 /*
                 onItemDetails = {
 
@@ -32,14 +33,14 @@ fun BottomNavGraph(navController: NavHostController) {
             )
         }
 
-        composable(DokanaBottomBarRoutes.Wishlist.route) {
+        composable(BottomBarRoutes.Wishlist.route) {
 
         }
-        composable(DokanaBottomBarRoutes.Cart.route) {
+        composable(BottomBarRoutes.Cart.route) {
 
         }
 
-        composable(DokanaBottomBarRoutes.Profile.route) {
+        composable(BottomBarRoutes.Profile.route) {
 
         }
         //detailsNavGraph(navController = navController)
@@ -51,18 +52,6 @@ fun BottomNavGraph(navController: NavHostController) {
     }
 }
 
-fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
-    navigation(
-        route = Graphs.DETAILS,
-        startDestination = DetailsScreen.Information.route
-    ) {
-        composable(route = DetailsScreen.Information.route) {
 
-        }
 
-    }
-}
 
-sealed class DetailsScreen(val route: String) {
-    object Information : DetailsScreen(route = "INFORMATION")
-}

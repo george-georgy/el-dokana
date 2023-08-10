@@ -26,4 +26,9 @@
 
     <string name="password_reset_email_sent_please_check_your_email_for_further_instructions">تم الإرسال الى بريدك إلكتروني لإعادة تعيين كلمة المرور. يرجى التحقق للحصول على مزيد من التعليمات.</string>
     <string name="or">او</string>
+
+    <string name="a_summer_surprise">استعد لتخفيضات الصيف</string>
+    <string name="up_to_50_off_on_selected_items"> استمتع بخصم يصل إلى 50٪ على العناصر المختارة على مجموعة من المنتجات</string>
+    <string name="don_t_miss_out_on_these_amazing_deals">لا تفوت هذه الصفقات المذهلة!</string>
+
 </resources>

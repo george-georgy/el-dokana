@@ -1,5 +1,8 @@
 package com.george_georgy.eldokana.feature_home_products.data.remote.dto
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class ProductDto(
     val category: String,
     val description: String,

@@ -18,6 +18,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -41,7 +42,7 @@ fun DokanaTopAppBar(
         Modifier
             .padding(16.dp)
             .fillMaxWidth()
-            .clip(shape = RoundedCornerShape(8.dp),),
+            .clip(shape = RoundedCornerShape(8.dp)),
         verticalAlignment = CenterVertically,
         horizontalArrangement = Arrangement.SpaceAround
     ) {
@@ -49,8 +50,8 @@ fun DokanaTopAppBar(
         Image(
             painter = painterResource(id = R.drawable.logo),
             modifier = Modifier
-                .size(35.dp)
-            ,
+                .padding(end = 8.dp)
+                .size(35.dp),
             contentDescription = null,
             contentScale = ContentScale.Crop
         )
@@ -64,13 +65,13 @@ fun DokanaTopAppBar(
 
             modifier = Modifier
                 .weight(1f)
-                .background(Color.LightGray, shape = RoundedCornerShape(8.dp))
-                .clickable {
-
-                },
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = MyLightGray, // Change background color
-                textColor = Color.Black // Change text color
+                .background(
+                    MyLightGray, shape = RoundedCornerShape(20.dp)
+                ),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Color.Transparent,
+                unfocusedBorderColor = Color.Transparent,
+                cursorColor = MyLightGray
             ),
             shape = RoundedCornerShape(size = 8.dp),
             leadingIcon = {
@@ -79,9 +80,11 @@ fun DokanaTopAppBar(
                     contentDescription = "search icon"
                 )
             },
-            placeholder = { Text(text = "What are you looking for?") }
+            placeholder = { Text(text = "What are you looking for?") },
 
-        )
+
+
+            )
 
 
     }

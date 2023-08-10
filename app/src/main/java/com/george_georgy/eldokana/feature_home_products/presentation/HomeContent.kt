@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.george_georgy.eldokana.feature_home_products.presentation.components.CategoriesList
+import com.george_georgy.eldokana.feature_home_products.presentation.category.HomeProductList
 import com.george_georgy.eldokana.feature_home_products.presentation.components.InstructionTopTitle
 import com.george_georgy.eldokana.feature_home_products.presentation.components.Promotions
 
@@ -27,11 +27,7 @@ fun HomeContent(paddingValues: PaddingValues) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        CategoriesList(
-            onSelectCategory = {},
-            selectedCategory = "All"
-        )
-
+        HomeProductList()
 
         Spacer(modifier = Modifier.height(16.dp))
 

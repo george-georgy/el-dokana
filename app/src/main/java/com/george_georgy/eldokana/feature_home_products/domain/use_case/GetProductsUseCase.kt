@@ -6,7 +6,8 @@ import com.george_georgy.eldokana.feature_home_products.domain.repository.HomeRe
 import kotlinx.coroutines.flow.Flow
 
 class GetProductsUseCase(
-    private val productsRepo: HomeRepository
+    private val productsRepo: HomeRepository,
+
 ) {
 
     operator fun invoke():

@@ -4,34 +4,33 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.ui.graphics.vector.ImageVector
 
-sealed class DokanaBottomBarRoutes(
+sealed class BottomBarRoutes(
     val route: String,
     val title: String,
     val icon: ImageVector
 ) {
-    object Home : DokanaBottomBarRoutes(
+    object Home : BottomBarRoutes(
         route = "HOME",
         title = "Home",
         icon = Icons.Default.Home
     )
 
-    object Profile : DokanaBottomBarRoutes(
+    object Profile : BottomBarRoutes(
         route = "PROFILE",
         title = "Profile",
         icon = Icons.Default.Person
     )
 
-    object Cart : DokanaBottomBarRoutes(
+    object Cart : BottomBarRoutes(
         route = "CART",
         title = "Cart",
         icon = Icons.Default.ShoppingCart
     )
 
-    object Wishlist : DokanaBottomBarRoutes(
+    object Wishlist : BottomBarRoutes(
         route = "WISHLIST",
         title = "Wishlist",
         icon = Icons.Default.Favorite

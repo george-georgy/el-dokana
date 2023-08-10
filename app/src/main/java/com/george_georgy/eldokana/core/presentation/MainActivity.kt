@@ -17,7 +17,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             EcommTheme {
                 Surface {
-                //    Navigation()
                     RootNavigationGraph(navController = rememberNavController())
                 }
             }

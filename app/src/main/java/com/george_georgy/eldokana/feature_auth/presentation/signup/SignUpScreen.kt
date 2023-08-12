@@ -29,7 +29,6 @@ import com.george_georgy.eldokana.feature_auth.presentation.components.AuthPassw
 import com.george_georgy.eldokana.feature_auth.presentation.components.AuthTextField
 import com.george_georgy.eldokana.feature_auth.presentation.components.ClickableAuthText
 import com.george_georgy.eldokana.feature_auth.presentation.components.DividerTextComponent
-import com.george_georgy.eldokana.feature_auth.presentation.components.ErrorAuthBox
 import com.george_georgy.eldokana.feature_auth.presentation.components.HeadingTextComponent
 import org.koin.androidx.compose.getViewModel
 
@@ -100,13 +99,12 @@ fun SignUpScreen(
                 onValueChange = { name ->
                     viewModel.onFormEvent(RegistrationFormEvent.UsernameChanged(name))
                 },
+                errorValue = state.nameError,
                 imageVector = Icons.Default.Person,
                 isError = state.nameError != null,
             )
 
-            ErrorAuthBox(
-                error = state.nameError
-            )
+
 
 
             AuthTextField(
@@ -115,13 +113,12 @@ fun SignUpScreen(
                 onValueChange = { email ->
                     viewModel.onFormEvent(RegistrationFormEvent.EmailChanged(email))
                 },
-                imageVector = Icons.Default.Email,
+                errorValue = state.emailError,
                 isError = state.emailError != null,
+                imageVector = Icons.Default.Email,
             )
 
-            ErrorAuthBox(
-                error = state.emailError
-            )
+
 
             AuthPasswordTextField(
                 label = stringResource(id = R.string.password),
@@ -129,13 +126,12 @@ fun SignUpScreen(
                 onValueChange = { password ->
                     viewModel.onFormEvent(RegistrationFormEvent.PasswordChanged(password))
                 },
-                imageVector = Icons.Default.Lock,
+                errorValue = state.passwordError,
                 isError = state.passwordError != null,
+                imageVector = Icons.Default.Lock,
             )
 
-            ErrorAuthBox(
-                error = state.passwordError
-            )
+
 
             AuthPasswordTextField(
 
@@ -148,14 +144,12 @@ fun SignUpScreen(
                         )
                     )
                 },
-                imageVector = Icons.Default.Lock,
+                errorValue = state.repeatedPasswordError,
                 isError = state.repeatedPasswordError != null,
+                imageVector = Icons.Default.Lock,
 
                 )
 
-            ErrorAuthBox(
-                error = state.repeatedPasswordError
-            )
 
             Spacer(modifier = Modifier.height(20.dp))
 

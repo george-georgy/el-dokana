@@ -4,7 +4,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.george_georgy.eldokana.core.presentation.navigation.graphs.bottom_nav_graph.DokanaBottomBarRoutes
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.bottom_nav_graph.BottomBarRoutes
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.Graphs
 import com.george_georgy.eldokana.feature_auth.presentation.forgot_password.ForgotPasswordScreen
 import com.george_georgy.eldokana.feature_auth.presentation.login.LoginScreen
@@ -16,9 +16,9 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
 
     navigation(
         route = Graphs.AUTHENTICATION,
-        startDestination = DokanaAuthRoutes.Splash.route
+        startDestination = AuthRoutes.Splash.route
     ) {
-        composable(DokanaAuthRoutes.Splash.route) {
+        composable(AuthRoutes.Splash.route) {
             SplashScreen(
                 onUserFoundNavigation = {
                     navController.popBackStack()
@@ -28,7 +28,7 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
                 },
                 onUserNotFoundNavigation = {
                     navController.popBackStack()
-                    navController.navigate(DokanaAuthRoutes.Login.route) {
+                    navController.navigate(AuthRoutes.Login.route) {
                     }
                 }
             )
@@ -37,7 +37,7 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
 
 
 
-        composable(DokanaAuthRoutes.Login.route) {
+        composable(AuthRoutes.Login.route) {
             LoginScreen(
                 onLoginSuccess = {
                     navController.popBackStack()
@@ -45,37 +45,37 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
 
                 },
                 onNavigationSignUpScreen = {
-                    navController.navigate(DokanaAuthRoutes.Register.route)
+                    navController.navigate(AuthRoutes.Register.route)
 
 
                 },
                 onNavigationForgetPassword = {
-                    navController.navigate(DokanaAuthRoutes.ForgotPassword.route)
+                    navController.navigate(AuthRoutes.ForgotPassword.route)
 
                 }
 
             )
         }
 
-        composable(DokanaAuthRoutes.ForgotPassword.route) {
+        composable(AuthRoutes.ForgotPassword.route) {
             ForgotPasswordScreen(
                 onNavigationSignUpScreen = {
-                    navController.navigate(DokanaAuthRoutes.Register.route) {
+                    navController.navigate(AuthRoutes.Register.route) {
                         popUpTo(0)
                     }
                 }
             )
         }
 
-        composable(DokanaAuthRoutes.Register.route) {
+        composable(AuthRoutes.Register.route) {
             SignUpScreen(
                 onSignUpSuccess = {
                     navController.popBackStack()
-                    navController.navigate(DokanaBottomBarRoutes.Home.route)
+                    navController.navigate(BottomBarRoutes.Home.route)
 
                 },
                 onNavigationLoginScreen = {
-                    navController.navigate(DokanaAuthRoutes.Login.route)
+                    navController.navigate(AuthRoutes.Login.route)
 
 
                 })

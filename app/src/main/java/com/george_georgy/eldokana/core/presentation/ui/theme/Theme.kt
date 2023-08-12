@@ -56,6 +56,5 @@ fun EcommTheme(
         colorScheme = colorScheme,
         typography = Typography,
         content = content,
-        shapes = componentShapes
     )
 }

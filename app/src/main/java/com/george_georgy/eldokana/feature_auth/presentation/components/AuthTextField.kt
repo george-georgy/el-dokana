@@ -14,18 +14,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.KeyboardType
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AuthTextField(
     modifier: Modifier = Modifier,
     label: String,
     value: String,
+    errorValue: String?,
     onValueChange: (String) -> Unit,
     imageVector: ImageVector,
     isError: Boolean,
 
 ) {
-    val uiColor = if (isSystemInDarkTheme()) Color.White else Color.Black
+    val textUiColor = if (isSystemInDarkTheme()) Color.White else Color.Black
 
     OutlinedTextField(
         modifier = modifier
@@ -36,7 +38,13 @@ fun AuthTextField(
             Text(
                 text = label,
                 style = MaterialTheme.typography.labelMedium,
-                color = uiColor
+                color = textUiColor
+            )
+        },
+        supportingText = {
+            Text(
+                text = errorValue ?: "",
+                color = Color.Red
             )
         },
         leadingIcon = {

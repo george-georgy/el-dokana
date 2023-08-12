@@ -1,8 +1,8 @@
 package com.george_georgy.eldokana.feature_auth.data.dto
 
-import com.george_georgy.eldokana.feature_auth.data.dto.Address
-import com.george_georgy.eldokana.feature_auth.data.dto.Name
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class UserDto(
     val __v: Int,
     val address: Address,

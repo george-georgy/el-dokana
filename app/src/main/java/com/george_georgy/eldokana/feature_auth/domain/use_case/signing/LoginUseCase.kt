@@ -11,6 +11,7 @@ class LoginUseCase(
         username: String,
         password: String
     ): AuthResult<Unit> {
-        return authRepository.loginUser(username = username, password = password)
+        return authRepository
+            .loginUser(username = username, password = password)
     }
 }

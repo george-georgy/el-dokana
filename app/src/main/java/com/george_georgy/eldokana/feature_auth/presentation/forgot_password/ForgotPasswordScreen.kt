@@ -60,6 +60,7 @@ fun ForgotPasswordScreen(
                 onValueChange = {
                 },
                 imageVector = Icons.Default.Email,
+                errorValue = "",
                 isError = false,
             )
 

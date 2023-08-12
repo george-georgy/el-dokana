@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -19,26 +20,32 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryColor
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLightColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun DokanaBottomNav(navController: NavHostController = rememberNavController()) {
     Scaffold(
-        bottomBar = { BottomBar(navController = navController) }
+        bottomBar = { DokanaBottomBar(navController = navController) }
     ) {
         BottomNavGraph(navController = navController)
     }
 }
 
+
 @Composable
-fun BottomBar(navController: NavHostController) {
+fun DokanaBottomBar(
+    navController: NavHostController
+) {
     val screens = listOf(
-        DokanaBottomBarRoutes.Home,
-        DokanaBottomBarRoutes.Profile,
-        DokanaBottomBarRoutes.Cart,
-        DokanaBottomBarRoutes.Wishlist,
-    )
+        BottomBarRoutes.Home,
+        BottomBarRoutes.Cart,
+        BottomBarRoutes.Wishlist,
+        BottomBarRoutes.Profile,
+
+        )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
@@ -58,7 +65,7 @@ fun BottomBar(navController: NavHostController) {
 
 @Composable
 fun RowScope.AddItem(
-    screen: DokanaBottomBarRoutes,
+    screen: BottomBarRoutes,
     currentDestination: NavDestination?,
     navController: NavHostController
 ) {
@@ -76,7 +83,7 @@ fun RowScope.AddItem(
             it.route == screen.route
         } == true,
         colors = NavigationBarItemDefaults.colors(
-            selectedIconColor = Color .Green,
+            selectedIconColor = Color.Black,
             unselectedIconColor = Color.Gray
         ),
         onClick = {
@@ -84,6 +91,7 @@ fun RowScope.AddItem(
                 popUpTo(navController.graph.findStartDestination().id)
                 launchSingleTop = true
             }
-        }
+        },
+        alwaysShowLabel = false
     )
 }

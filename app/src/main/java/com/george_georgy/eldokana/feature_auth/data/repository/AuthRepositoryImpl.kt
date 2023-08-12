@@ -20,8 +20,9 @@ class AuthRepositoryImpl @Inject constructor(
 
 
     override suspend fun loginUser(username: String, password: String): AuthResult<Unit> {
+        Timber.d("Login called")
+
         return try {
-            Timber.d("Login called")
 
             val response = authApi.loginUser(
                 LoginRequest(
@@ -31,11 +32,9 @@ class AuthRepositoryImpl @Inject constructor(
             )
             Timber.d("Login Token: ${response.token}")
 
-
-            userPreference.saveUserToken(response.token)
             getUserData(username)?.let { userPreference.saveUserdata(it) }
+            userPreference.saveUserToken(response.token)
             AuthResult.Authorized()
-
         } catch (e: HttpException) {
             if (e.statusCode == 401) {
                 AuthResult.Unauthorized()

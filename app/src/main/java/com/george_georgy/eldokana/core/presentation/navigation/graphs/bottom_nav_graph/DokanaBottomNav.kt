@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -19,6 +20,8 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryColor
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLightColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -32,10 +35,10 @@ fun DokanaBottomNav(navController: NavHostController = rememberNavController()) 
 }
 
 
-
 @Composable
 fun DokanaBottomBar(
-    navController: NavHostController) {
+    navController: NavHostController
+) {
     val screens = listOf(
         BottomBarRoutes.Home,
         BottomBarRoutes.Cart,

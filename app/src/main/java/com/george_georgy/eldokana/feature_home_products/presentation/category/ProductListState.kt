@@ -1,4 +1,4 @@
-package com.george_georgy.eldokana.feature_home_products.presentation.products
+package com.george_georgy.eldokana.feature_home_products.presentation.category
 
 import com.george_georgy.eldokana.feature_home_products.domain.model.Product
 

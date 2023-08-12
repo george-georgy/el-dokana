@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -30,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.george_georgy.eldokana.R
+import java.nio.file.WatchEvent
 
 
 @Composable
@@ -40,18 +42,18 @@ fun Promotions() {
     ) {
         item {
             PromotionItem(
-                imagePainter = painterResource(id = R.drawable.ic_launcher_background),
+                imagePainter = painterResource(id = R.drawable.discount),
                 title = stringResource(R.string.a_summer_surprise),
                 subtitle = stringResource(R.string.up_to_50_off_on_selected_items),
-                backgroundColor = Color(0xFFFF9800)
+                backgroundColor = Color(0xff6EB6F5)
             )
         }
         item {
             PromotionItem(
-                imagePainter = painterResource(id = R.drawable.ic_launcher_background),
+                imagePainter = painterResource(id = R.drawable.sale),
                 title = stringResource(R.string.a_summer_surprise),
                 subtitle = stringResource(R.string.don_t_miss_out_on_these_amazing_deals),
-                backgroundColor = Color(0xff6EB6F5)
+                backgroundColor = Color( 0xFFA4161A)
             )
         }
     }
@@ -65,26 +67,43 @@ fun PromotionItem(
     imagePainter: Painter
 ) {
     Card(
-        Modifier.width(300.dp),
+        Modifier.width(330.dp),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
             containerColor = backgroundColor,
         ),
     ) {
+        Row(
+            modifier = Modifier.padding(12.dp),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+
+            ) {
             Column(
                 Modifier
-                    .padding(12.dp)
-                    .fillMaxWidth(),
+                    .weight(.90f),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.Start
             ) {
-                Text(text = title, fontSize = 14.sp, color = Color.White)
-                Text(text = subtitle, fontSize = 18.sp, color = Color.White, fontWeight = FontWeight.Bold)
+                Text(text = title, fontSize = 15.sp, color = Color.White)
+                Text(
+                    text = subtitle,
+                    fontSize = 15.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold
+                )
             }
 
+            Image(
+                painter = imagePainter,
+                contentDescription = "",
+                modifier = Modifier.size(35.dp)
+            )
 
+        }
     }
 }
+
 @Composable
 @Preview
 fun PreviewPromotions() {

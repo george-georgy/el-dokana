@@ -19,14 +19,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.george_georgy.eldokana.core.presentation.ui.theme.MyLightGray
+import com.george_georgy.eldokana.feature_home_products.domain.model.Product
 import com.george_georgy.eldokana.feature_home_products.presentation.components.ProductListItem
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun HomeProductList(
+fun HomeLists(
     homeViewModel: HomeViewModel = getViewModel(),
+    onClick : (Product) -> Unit
+
 ) {
 
 
@@ -35,8 +39,10 @@ fun HomeProductList(
     val products = homeViewModel.productState.value.products
 
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(),
+
+        ) {
 
         LazyRow(
             Modifier.fillMaxWidth(),
@@ -48,6 +54,7 @@ fun HomeProductList(
                 Text(
                     text = category,
                     color = if (category == selectedCategory) Color.White else Color.Black,
+                    fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .clip(
                             shape = RoundedCornerShape(
@@ -60,6 +67,7 @@ fun HomeProductList(
                         .background(
                             if (category == selectedCategory) {
                                 Color.Black
+
                             } else {
                                 MyLightGray
                             }
@@ -76,7 +84,7 @@ fun HomeProductList(
             contentPadding = PaddingValues(16.dp)
         ) {
             items(products) { product ->
-                ProductListItem(product,{})
+                ProductListItem(product, onClick)
             }
         }
     }

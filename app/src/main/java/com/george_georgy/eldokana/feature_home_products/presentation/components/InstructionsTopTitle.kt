@@ -26,10 +26,12 @@ import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.george_georgy.eldokana.core.presentation.ui.theme.MyLightGray
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLightColor
 
 
 @Composable
@@ -44,15 +46,15 @@ fun InstructionTopTitle() {
     ) {
         Row(
             Modifier.fillMaxSize(),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
         ) {
             InstructionItem(image = Icons.Default.Recycling, "14 days free returns mean?")
 
             Divider(
                 color = Black,
                 modifier = Modifier
-                    .padding(4.dp,top=12.dp, bottom = 12.dp)
+                    .padding(4.dp, top = 12.dp, bottom = 12.dp)
                     .fillMaxHeight()
                     .width(1.dp)
             )
@@ -66,10 +68,10 @@ fun InstructionTopTitle() {
 fun InstructionItem(
     image: ImageVector, itemText: String
 ) {
-    Row (
+    Row(
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
-            ){
+    ) {
         Icon(
             imageVector = image,
             contentDescription = "",
@@ -78,6 +80,7 @@ fun InstructionItem(
         Text(
             text = itemText,
             color = Black,
+            fontWeight = FontWeight.Bold,
             fontSize = 12.sp
         )
 

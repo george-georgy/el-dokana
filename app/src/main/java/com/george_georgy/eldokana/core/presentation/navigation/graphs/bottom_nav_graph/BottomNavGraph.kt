@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.Graphs
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.details_graph.DetailsScreen
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.details_graph.detailsNavGraph
 import com.george_georgy.eldokana.feature_home_products.presentation.HomeScreen
 
 @Composable
@@ -18,18 +19,15 @@ fun BottomNavGraph(navController: NavHostController) {
         startDestination = BottomBarRoutes.Home.route
     ) {
         composable(BottomBarRoutes.Home.route) {
-            HomeScreen(navController
-                /*
-                onItemDetails = {
-
-                    navController.navigate(DetailsScreen.Information.route) {
-                        popUpTo(0)
-                    }
-
-
-
+            HomeScreen(
+                onItemDetails = {product ->
+                    navController.currentBackStackEntry?.savedStateHandle?.set(
+                        key = "product",
+                        value = product
+                    )
+                    navController.navigate(DetailsScreen.Information.route)
                 }
-            */
+
             )
         }
 
@@ -43,12 +41,8 @@ fun BottomNavGraph(navController: NavHostController) {
         composable(BottomBarRoutes.Profile.route) {
 
         }
-        //detailsNavGraph(navController = navController)
-        composable(route = DetailsScreen.Information.route) {
 
-
-
-        }
+        detailsNavGraph(navController = navController)
     }
 }
 

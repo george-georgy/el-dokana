@@ -41,7 +41,7 @@ fun ProductListItem(
             containerColor = White,
         ),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 1.dp
+            defaultElevation = 2.dp
         )
 
     ) {
@@ -56,7 +56,6 @@ fun ProductListItem(
                     .height(120.dp)
                     .padding(top = 4.dp)
                     .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp)),
-                //  contentScale = ContentScale.Crop
             )
 
             Spacer(modifier = Modifier.height(8.dp))

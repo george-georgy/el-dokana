@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -74,7 +75,8 @@ fun SplashScreen(
             }
 
             Icon(
-                modifier = Modifier.padding(24.dp),
+                modifier = Modifier.padding(24.dp)
+                    .size(55.dp),
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = null,
                 tint = uiColor

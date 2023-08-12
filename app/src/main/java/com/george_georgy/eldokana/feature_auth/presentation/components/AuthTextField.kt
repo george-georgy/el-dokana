@@ -8,15 +8,12 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.KeyboardType
-import com.george_georgy.eldokana.core.presentation.ui.theme.focusedTextFieldText
-import com.george_georgy.eldokana.core.presentation.ui.theme.textFieldContainer
-import com.george_georgy.eldokana.core.presentation.ui.theme.unfocusedTextFieldText
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

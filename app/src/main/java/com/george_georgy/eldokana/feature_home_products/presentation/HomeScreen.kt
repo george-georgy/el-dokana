@@ -1,61 +1,51 @@
 package com.george_georgy.eldokana.feature_home_products.presentation
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.george_georgy.eldokana.feature_home_products.domain.model.Product
-import com.george_georgy.eldokana.feature_home_products.presentation.category.HomeLists
-import com.george_georgy.eldokana.feature_home_products.presentation.components.DokanaTopAppBar
-import com.george_georgy.eldokana.feature_home_products.presentation.components.InstructionTopTitle
-import com.george_georgy.eldokana.feature_home_products.presentation.components.Promotions
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.DokanaBottomBar
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.HomeNavGraph
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.HomeRoutes
+import com.george_georgy.eldokana.feature_home_products.presentation.components.DokanaTopAppBar
+
+
 @OptIn(ExperimentalMaterial3Api::class)
+@SuppressLint("RememberReturnType")
 @Composable
 fun HomeScreen(
-    onItemDetails : (Product) -> Unit
+    navController: NavHostController = rememberNavController(),
 ) {
 
-    Surface {
-
-        Scaffold(
-            topBar = { DokanaTopAppBar() },
-            containerColor = Color.Transparent,
+    //topBar visibility state
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navBackStackEntry?.destination
 
 
-            ) { paddingValues ->
-
-            Column(
-                Modifier.padding(paddingValues),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-
-                InstructionTopTitle()
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Promotions()
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                HomeLists(onClick = onItemDetails)
-
-                Spacer(modifier = Modifier.height(16.dp))
-
+    Scaffold(
+        topBar = {
+            if (currentDestination?.route == HomeRoutes.HomeScreen.route) {
+                DokanaTopAppBar()
             }
+        },
+        bottomBar = {
+            DokanaBottomBar(navController = navController)
+        }
+
+    ) { padding ->
+        Box(
+            modifier = Modifier
+                .padding(padding)
+        ) {
+
+            HomeNavGraph(navController = navController)
         }
     }
 }
-
-

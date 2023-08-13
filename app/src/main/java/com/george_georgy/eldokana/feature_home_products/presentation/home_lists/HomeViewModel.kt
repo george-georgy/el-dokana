@@ -1,4 +1,4 @@
-package com.george_georgy.eldokana.feature_home_products.presentation.category
+package com.george_georgy.eldokana.feature_home_products.presentation.home_lists
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

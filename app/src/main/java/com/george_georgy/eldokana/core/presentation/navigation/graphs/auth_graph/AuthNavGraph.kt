@@ -4,7 +4,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.george_georgy.eldokana.core.presentation.navigation.graphs.bottom_nav_graph.BottomBarRoutes
+import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.BottomBarRoutes
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.Graphs
 import com.george_georgy.eldokana.feature_auth.presentation.forgot_password.ForgotPasswordScreen
 import com.george_georgy.eldokana.feature_auth.presentation.login.LoginScreen

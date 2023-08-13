@@ -6,7 +6,7 @@ import com.george_georgy.eldokana.feature_home_products.data.remote.repository.H
 import com.george_georgy.eldokana.feature_home_products.domain.repository.HomeRepository
 import com.george_georgy.eldokana.feature_home_products.domain.use_case.GetCategoriesUseCase
 import com.george_georgy.eldokana.feature_home_products.domain.use_case.GetProductsUseCase
-import com.george_georgy.eldokana.feature_home_products.presentation.category.HomeViewModel
+import com.george_georgy.eldokana.feature_home_products.presentation.home_lists.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

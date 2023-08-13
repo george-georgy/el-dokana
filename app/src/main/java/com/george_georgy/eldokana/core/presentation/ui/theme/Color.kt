@@ -1,6 +1,5 @@
 package com.george_georgy.eldokana.core.presentation.ui.theme
 
-import android.provider.CalendarContract
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
@@ -14,7 +13,11 @@ val BlueGray = Color(0xFF334155)
 
 val DarkBlue = Color(0xFF00427A)
 val LightBlue = Color(0xFF75B7EE)
-val MyLightGray = Color(0xFFF3EDED)
+
+val PrimaryLight = Color(0xFFF5F5F5)
+val PrimaryDark = Color(0xFF333333)
+
+
 
 
 

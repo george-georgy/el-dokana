@@ -27,7 +27,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.george_georgy.eldokana.R
-import com.george_georgy.eldokana.core.presentation.ui.theme.MyLightGray
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -61,12 +61,12 @@ fun DokanaTopAppBar(
             modifier = Modifier
                 .weight(1f)
                 .background(
-                    MyLightGray, shape = RoundedCornerShape(20.dp)
+                    PrimaryLight, shape = RoundedCornerShape(20.dp)
                 ),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = Color.Transparent,
                 unfocusedBorderColor = Color.Transparent,
-                cursorColor = MyLightGray
+                cursorColor = PrimaryLight
             ),
             shape = RoundedCornerShape(size = 8.dp),
             leadingIcon = {

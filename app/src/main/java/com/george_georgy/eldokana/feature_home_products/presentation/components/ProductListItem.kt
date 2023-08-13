@@ -76,7 +76,7 @@ fun ProductListItem(
                 ) {
 
                 Text(
-                    text = product.price.toString(),
+                    text = product.price.toString() + " L.E",
                     textAlign = TextAlign.Start,
                     modifier = Modifier.padding(top = 4.dp),
 

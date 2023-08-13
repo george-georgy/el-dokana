@@ -1,4 +1,4 @@
-package com.george_georgy.eldokana.feature_home_products.presentation.category
+package com.george_georgy.eldokana.feature_home_products.presentation.home_lists
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -21,7 +21,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.george_georgy.eldokana.core.presentation.ui.theme.MyLightGray
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
 import com.george_georgy.eldokana.feature_home_products.domain.model.Product
 import com.george_georgy.eldokana.feature_home_products.presentation.components.ProductListItem
 import org.koin.androidx.compose.getViewModel
@@ -53,7 +54,7 @@ fun HomeLists(
             items(categories) { category ->
                 Text(
                     text = category,
-                    color = if (category == selectedCategory) Color.White else Color.Black,
+                    color = if (category == selectedCategory) Color.White else PrimaryDark,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .clip(
@@ -66,10 +67,10 @@ fun HomeLists(
                         }
                         .background(
                             if (category == selectedCategory) {
-                                Color.Black
+                                PrimaryDark
 
                             } else {
-                                MyLightGray
+                                PrimaryLight
                             }
                         )
                         .padding(

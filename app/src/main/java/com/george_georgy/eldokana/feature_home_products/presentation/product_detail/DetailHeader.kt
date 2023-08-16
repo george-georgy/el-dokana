@@ -22,12 +22,11 @@ import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 @Composable
 fun DetailHeader(
     onBackButtonClick: () -> Unit,
-    onCartButtonClick: () -> Unit
+    onWishlistButtonClick: () -> Unit
 ) {
     Row(
         Modifier
-            .fillMaxWidth()
-            .padding(bottom = 16.dp),
+            .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
@@ -50,7 +49,7 @@ fun DetailHeader(
             Modifier
                 .size(25.dp)
                 .clickable {
-                    onCartButtonClick()
+                    onWishlistButtonClick()
                 },
             tint = PrimaryDark
         )
@@ -62,6 +61,6 @@ fun DetailHeader(
 fun DetailHeaderPreview() {
     DetailHeader(
         onBackButtonClick = {},
-        onCartButtonClick = {}
+        onWishlistButtonClick = {}
     )
 }

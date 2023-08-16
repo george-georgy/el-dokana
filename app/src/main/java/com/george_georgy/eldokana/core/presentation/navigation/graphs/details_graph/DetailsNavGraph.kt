@@ -18,19 +18,22 @@ fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
         composable(route = DetailsScreen.Information.route) {
             val resultProduct = navController.previousBackStackEntry?.savedStateHandle?.get<Product>("product")
 
-            ProductDetailScreen(
-               resultProduct,
+            if (resultProduct != null) {
+                ProductDetailScreen(
+                    resultProduct,
 
-                onBackButtonClick = {
-                    navController.popBackStack()
+                    onBackButtonClick = {
+                        navController.popBackStack()
 
-                },
-                onCartButtonClick = {
-                    navController.navigate(HomeRoutes.WishlistScreen.route)
+                    },
+
+                    onCartButtonClick = {
+                        navController.navigate(HomeRoutes.WishlistScreen.route)
 
 
                     }
-            )
+                )
+            }
         }
 
     }

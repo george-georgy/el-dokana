@@ -7,7 +7,8 @@ import androidx.navigation.compose.composable
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.Graphs
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.details_graph.detailsNavGraph
 import com.george_georgy.eldokana.feature_home_products.presentation.DashboardScreen
-import com.george_georgy.feature_wishlist.presentaion.WishlistScreen
+import com.george_georgy.eldokana.feature_wishlist.data.mapper.toProduct
+import com.george_georgy.eldokana.feature_wishlist.presentaion.WishlistScreen
 
 @Composable
 fun HomeNavGraph(navController: NavHostController) {
@@ -30,7 +31,15 @@ fun HomeNavGraph(navController: NavHostController) {
         }
 
         composable(BottomBarRoutes.Wishlist.route) {
-            WishlistScreen()
+            WishlistScreen(
+                onClickWishItem = {
+                    navController.currentBackStackEntry?.savedStateHandle?.set(
+                        key = "product",
+                        value = it.toProduct()
+                    )
+                    navController.navigate(Graphs.DETAILS)
+                }
+            )
 
         }
         composable(BottomBarRoutes.Cart.route) {

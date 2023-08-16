@@ -2,6 +2,7 @@ package com.george_georgy.eldokana.feature_home_products.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -27,6 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.george_georgy.eldokana.R
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,7 +63,8 @@ fun DokanaTopAppBar(
             modifier = Modifier
                 .weight(1f)
                 .background(
-                    PrimaryLight, shape = RoundedCornerShape(20.dp)
+                    color = Color.White
+                    , shape = RoundedCornerShape(15.dp)
                 ),
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = Color.Transparent,
@@ -72,10 +75,16 @@ fun DokanaTopAppBar(
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Rounded.Search,
-                    contentDescription = "search icon"
+                    contentDescription = "search icon",
+                    tint = PrimaryDark
                 )
             },
-            placeholder = { Text(text = "What are you looking for?") },
+            placeholder = {
+                Text(
+                    text = "What are you looking for?",
+                    color = Color.Gray
+                )
+            },
 
 
             )

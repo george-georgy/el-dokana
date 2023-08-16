@@ -59,26 +59,31 @@ class HomeViewModel(
                     is Resource.Success -> {
 
                         if (category != "All") {
-                            _productState.value = ProductListState(
+                            _productState.value = _productState.value.copy(
                                 products = result.data?.filter { it.category == category }
-                                    ?: emptyList()
+                                    ?: emptyList(),
+                                isLoading = false
+
                             )
                         } else {
                             _productState.value = _productState.value.copy(
-                                products = result.data ?: emptyList()
+                                products = result.data ?: emptyList(),
+                                isLoading = false
+
 
                             )
                        }
                     }
 
                     is Resource.Error -> {
-                        _productState.value = ProductListState(
+                        _productState.value = _productState.value.copy(
                             error = result.message ?: "An unexpected error occurred"
                         )
                     }
 
                     is Resource.Loading -> {
-                        _productState.value = ProductListState(
+                        _productState.value = _productState.value.copy(
+                            products = emptyList(),
                             isLoading = true
                         )
                     }

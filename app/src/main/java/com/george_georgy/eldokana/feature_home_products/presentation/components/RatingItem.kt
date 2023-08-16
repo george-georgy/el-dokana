@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 
 @Composable
 fun RatingItem(productRatingCount: Int) {
@@ -28,15 +29,15 @@ fun RatingItem(productRatingCount: Int) {
         Icon(
             imageVector = Icons.Default.Star,
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary,
+            tint = PrimaryDark,
             modifier = Modifier.size(18.dp)
         )
 
         Spacer(modifier = Modifier.width(4.dp))
 
         Text(
-            text = productRatingCount.toString(),
-            color = MaterialTheme.colorScheme.primary
+            text = "($productRatingCount)",
+            color = PrimaryDark
         )
     }
 }

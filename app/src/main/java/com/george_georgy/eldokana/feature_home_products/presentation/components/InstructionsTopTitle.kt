@@ -1,5 +1,6 @@
 package com.george_georgy.eldokana.feature_home_products.presentation.components
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -19,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -34,14 +36,13 @@ fun InstructionTopTitle() {
     Card(
         Modifier
             .height(35.dp),
-
         colors = CardDefaults.cardColors(
-            containerColor = PrimaryLight,
+            containerColor = Color.White,
         ),
         shape = RoundedCornerShape(0.dp),
 
 
-    ) {
+        ) {
         Row(
             Modifier.fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically,

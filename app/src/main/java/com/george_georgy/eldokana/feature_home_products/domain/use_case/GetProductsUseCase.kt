@@ -7,9 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 class GetProductsUseCase(
     private val productsRepo: HomeRepository,
-
 ) {
-
     operator fun invoke():
             Flow<Resource<List<Product>>> {
         return productsRepo.getProducts()

@@ -2,6 +2,7 @@ package com.george_georgy.eldokana
 
 import android.app.Application
 import com.george_georgy.eldokana.di.appModule
+import com.george_georgy.eldokana.di.databaseModule
 import com.george_georgy.eldokana.di.homeModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -19,6 +20,6 @@ class EldokanaApp : Application() {
         }
     }
 
-    private fun provideModules() = listOf(appModule, homeModule)
+    private fun provideModules() = listOf(appModule, homeModule , databaseModule)
 
 }

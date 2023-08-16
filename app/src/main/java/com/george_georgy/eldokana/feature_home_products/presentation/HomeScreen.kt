@@ -1,6 +1,7 @@
 package com.george_georgy.eldokana.feature_home_products.presentation
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -14,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.DokanaBottomBar
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.HomeNavGraph
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.HomeRoutes
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
 import com.george_georgy.eldokana.feature_home_products.presentation.components.DokanaTopAppBar
 
 
@@ -42,6 +44,7 @@ fun HomeScreen(
     ) { padding ->
         Box(
             modifier = Modifier
+                .background(color = PrimaryLight)
                 .padding(padding)
         ) {
 

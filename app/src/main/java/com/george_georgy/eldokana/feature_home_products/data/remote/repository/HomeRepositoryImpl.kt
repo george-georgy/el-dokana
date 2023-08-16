@@ -16,8 +16,8 @@ class HomeRepositoryImpl(
 
 ) : HomeRepository {
     override fun getProducts(): Flow<Resource<List<Product>>> = flow {
-        emit(Resource.Loading())
         try {
+            emit(Resource.Loading())
             val response = homeApi.getAllProducts()
             emit(Resource.Success(response.map { it.toProduct() }))
         } catch (e: IOException) {

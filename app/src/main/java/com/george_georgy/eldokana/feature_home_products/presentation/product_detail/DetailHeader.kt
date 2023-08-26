@@ -56,11 +56,3 @@ fun DetailHeader(
     }
 }
 
-@Preview
-@Composable
-fun DetailHeaderPreview() {
-    DetailHeader(
-        onBackButtonClick = {},
-        onWishlistButtonClick = {}
-    )
-}

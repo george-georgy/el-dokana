@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
+import com.george_georgy.eldokana.core.presentation.ui.theme.WhiteSmoke
 
 
 @Composable
@@ -37,7 +38,7 @@ fun InstructionTopTitle() {
         Modifier
             .height(35.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White,
+            containerColor = WhiteSmoke,
         ),
         shape = RoundedCornerShape(0.dp),
 
@@ -48,12 +49,12 @@ fun InstructionTopTitle() {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            InstructionItem(image = Icons.Default.Recycling, "14 days free returns mean?")
+            InstructionItem(image = Icons.Default.Recycling, "14 days free returns")
 
             Divider(
                 color = PrimaryDark,
                 modifier = Modifier
-                    .padding(4.dp, top = 12.dp, bottom = 12.dp)
+                    .padding(4.dp, top = 10.dp, bottom = 10.dp)
                     .fillMaxHeight()
                     .width(1.dp)
             )
@@ -80,7 +81,7 @@ fun InstructionItem(
             text = itemText,
             color = PrimaryDark,
             fontWeight = FontWeight.Bold,
-            fontSize = 12.sp
+            fontSize = 14.sp
         )
 
     }

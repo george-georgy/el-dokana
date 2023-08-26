@@ -1,9 +1,7 @@
 package com.george_georgy.eldokana.feature_home_products.presentation.components
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -15,8 +13,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -41,7 +39,7 @@ fun ProductListItem(
             containerColor = White,
         ),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 2.dp
+            defaultElevation = 4.dp
         )
 
     ) {
@@ -54,7 +52,7 @@ fun ProductListItem(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(120.dp)
-                    .padding(top = 4.dp)
+                    .padding(12.dp)
                     .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp)),
             )
 
@@ -65,27 +63,21 @@ fun ProductListItem(
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Start,
-                modifier = Modifier.padding(horizontal = 8.dp)
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(start = 8.dp , 4.dp)
             )
 
-            Row(
+            RatingItem(product.rating.count)
+
+            Text(
+                text = product.price.toString() + " L.E",
+                textAlign = TextAlign.Start,
+                fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 8.dp),
+                    .padding(start = 8.dp),
 
-                ) {
-
-                Text(
-                    text = product.price.toString() + " L.E",
-                    textAlign = TextAlign.Start,
-                    modifier = Modifier.padding(top = 4.dp),
-
-                    )
-
-                RatingItem(product.rating.count)
-
-
-            }
+                )
 
             Spacer(modifier = Modifier.height(8.dp))
 

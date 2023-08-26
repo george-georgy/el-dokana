@@ -38,6 +38,9 @@ fun HomeNavGraph(navController: NavHostController) {
                         value = it.toProduct()
                     )
                     navController.navigate(Graphs.DETAILS)
+                },
+                onBackArrowIcon = {
+                    navController.popBackStack()
                 }
             )
 

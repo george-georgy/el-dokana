@@ -9,6 +9,7 @@ import com.george_georgy.eldokana.feature_home_products.domain.use_case.GetCateg
 import com.george_georgy.eldokana.feature_home_products.domain.use_case.GetProductsUseCase
 
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class HomeViewModel(
     private val getCategoriesUseCase: GetCategoriesUseCase,
@@ -53,6 +54,7 @@ class HomeViewModel(
 
 
     private fun getProducts(category : String) {
+        Timber.d(""+Thread.currentThread())
         viewModelScope.launch {
             getProductsUseCase().collect{ result ->
                 when (result) {

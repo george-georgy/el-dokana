@@ -28,7 +28,7 @@
     <string name="or">او</string>
 
     <string name="a_summer_surprise">استعد لتخفيضات الصيف</string>
-    <string name="up_to_50_off_on_selected_items"> استمتع بخصم يصل إلى 50٪ على العناصر المختارة على مجموعة من المنتجات</string>
-    <string name="don_t_miss_out_on_these_amazing_deals">لا تفوت هذه الصفقات المذهلة!</string>
+    <string name="up_to_50_off_on_selected_items"> استمتع بخصم يصل إلى 50٪ على العناصر المختارة</string>
+    <string name="don_t_miss_out_on_these_amazing_deals">لا تفوت هذه الصفقات!</string>
 
 </resources>

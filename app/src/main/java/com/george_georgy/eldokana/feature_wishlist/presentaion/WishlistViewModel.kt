@@ -62,6 +62,7 @@ class WishlistViewModel(
 
     fun deleteAllWishlist() {
         viewModelScope.launch {
+            Timber.d(""+Thread.currentThread())
             repository.getWishlist().collect { items ->
                 if (items.isEmpty()) {
                     _wishlistEventResult.emit(

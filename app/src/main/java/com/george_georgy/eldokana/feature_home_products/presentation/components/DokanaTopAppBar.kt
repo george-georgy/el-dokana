@@ -2,7 +2,6 @@ package com.george_georgy.eldokana.feature_home_products.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -29,7 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.george_georgy.eldokana.R
 import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
-import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
+import com.george_georgy.eldokana.core.presentation.ui.theme.WhiteSmoke
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -63,13 +62,14 @@ fun DokanaTopAppBar(
             modifier = Modifier
                 .weight(1f)
                 .background(
-                    color = Color.White
-                    , shape = RoundedCornerShape(15.dp)
+                    color = WhiteSmoke, shape = RoundedCornerShape(15.dp)
                 ),
+
+
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedBorderColor = Color.Transparent,
                 unfocusedBorderColor = Color.Transparent,
-                cursorColor = PrimaryLight
+                cursorColor = WhiteSmoke
             ),
             shape = RoundedCornerShape(size = 8.dp),
             leadingIcon = {
@@ -85,9 +85,7 @@ fun DokanaTopAppBar(
                     color = Color.Gray
                 )
             },
-
-
-            )
+        )
 
 
     }

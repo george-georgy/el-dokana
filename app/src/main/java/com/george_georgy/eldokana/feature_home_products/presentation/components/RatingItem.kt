@@ -21,10 +21,10 @@ import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 @Composable
 fun RatingItem(productRatingCount: Int) {
     Row(
-        modifier = Modifier.padding(top = 4.dp)
+        modifier = Modifier.padding(4.dp)
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.End
+        horizontalArrangement = Arrangement.Start
     ) {
         Icon(
             imageVector = Icons.Default.Star,

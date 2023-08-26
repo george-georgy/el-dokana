@@ -8,14 +8,13 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.DokanaBottomBar
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.HomeNavGraph
 import com.george_georgy.eldokana.core.presentation.navigation.graphs.home_graph.HomeRoutes
-import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
 import com.george_georgy.eldokana.feature_home_products.presentation.components.DokanaTopAppBar
 
 
@@ -44,7 +43,7 @@ fun HomeScreen(
     ) { padding ->
         Box(
             modifier = Modifier
-                .background(color = PrimaryLight)
+                .background(color = Color.White)
                 .padding(padding)
         ) {
 

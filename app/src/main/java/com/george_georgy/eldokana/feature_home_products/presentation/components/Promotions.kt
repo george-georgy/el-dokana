@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -31,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.george_georgy.eldokana.R
+import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 import java.nio.file.WatchEvent
 
 
@@ -45,7 +47,7 @@ fun Promotions() {
                 imagePainter = painterResource(id = R.drawable.discount),
                 title = stringResource(R.string.a_summer_surprise),
                 subtitle = stringResource(R.string.up_to_50_off_on_selected_items),
-                backgroundColor = Color(0xff6EB6F5)
+                backgroundColor = Color(0xFFe7e7e7)
             )
         }
         item {
@@ -53,7 +55,7 @@ fun Promotions() {
                 imagePainter = painterResource(id = R.drawable.sale),
                 title = stringResource(R.string.a_summer_surprise),
                 subtitle = stringResource(R.string.don_t_miss_out_on_these_amazing_deals),
-                backgroundColor = Color( 0xFFA4161A)
+                backgroundColor = Color(0xFFe7e7e7)
             )
         }
     }
@@ -67,29 +69,35 @@ fun PromotionItem(
     imagePainter: Painter
 ) {
     Card(
-        Modifier.width(330.dp),
+        Modifier
+            .width(330.dp)
+            .wrapContentHeight(),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
             containerColor = backgroundColor,
         ),
     ) {
         Row(
-            modifier = Modifier.padding(12.dp),
+            modifier = Modifier.padding(start = 12.dp , top=12.dp, bottom = 12.dp),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically,
 
             ) {
             Column(
                 Modifier
-                    .weight(.90f),
+                    .weight(.75f),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.Start
             ) {
-                Text(text = title, fontSize = 15.sp, color = Color.White)
+                Text(
+                    text = title,
+                    fontSize = 15.sp,
+                    color = PrimaryDark
+                )
                 Text(
                     text = subtitle,
                     fontSize = 15.sp,
-                    color = Color.White,
+                    color = PrimaryDark,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -97,7 +105,9 @@ fun PromotionItem(
             Image(
                 painter = imagePainter,
                 contentDescription = "",
-                modifier = Modifier.size(35.dp)
+                modifier = Modifier
+                    .weight(.25f)
+                    .size(35.dp)
             )
 
         }

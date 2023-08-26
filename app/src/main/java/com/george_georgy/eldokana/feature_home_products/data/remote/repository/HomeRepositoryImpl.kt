@@ -27,11 +27,11 @@ class HomeRepositoryImpl(
         }
     }
 
-    override suspend fun getProductCategories(): List<String> {
-        return homeApi.getProductCategories()
+    override suspend fun getProductCategories(): List<String> =
+         homeApi.getProductCategories()
 
 
-    }
+
 }
 
 

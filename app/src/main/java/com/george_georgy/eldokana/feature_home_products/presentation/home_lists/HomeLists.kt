@@ -58,6 +58,7 @@ fun HomeLists(
 
         ) {
 
+
             LazyRow(
                 Modifier.fillMaxWidth(),
                 contentPadding = PaddingValues(horizontal = 16.dp),
@@ -70,15 +71,14 @@ fun HomeLists(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(2.dp),
-                        shape = RoundedCornerShape(8.dp),
-            //            border = BorderStroke(1.dp, PrimaryDark)
+                        shape = RoundedCornerShape(15.dp),
+                        border = BorderStroke(1.dp, PrimaryDark)
                     ) {
                         Text(
                             text = category,
                             color = if (category == selectedCategory) Color.White else PrimaryDark,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier
-
                                 .clip(
                                     shape = RoundedCornerShape(
                                         size = 4.dp,
@@ -109,7 +109,7 @@ fun HomeLists(
 
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2), // Number of columns in the grid
-                contentPadding = PaddingValues(16.dp)
+                modifier = Modifier.padding(16.dp)
             ) {
                 items(productState.products) { product ->
                     ProductListItem(product, onClick)

@@ -28,6 +28,6 @@
     <string name="password_reset_email_sent_please_check_your_email_for_further_instructions">Password reset email sent. Please check your email for further instructions.</string>
     <string name="or">or</string>
     <string name="a_summer_surprise">A Summer Surprise</string>
-    <string name="up_to_50_off_on_selected_items">Up to 50% off on selected items on a wide range of products.</string>
-    <string name="don_t_miss_out_on_these_amazing_deals">Don\'t miss out on these amazing deals!</string>
+    <string name="up_to_50_off_on_selected_items">Up to 50% off on selected items</string>
+    <string name="don_t_miss_out_on_these_amazing_deals">Don\'t miss out on these deals!</string>
 </resources>

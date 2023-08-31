@@ -7,6 +7,8 @@ import com.george_georgy.eldokana.feature_home_products.domain.repository.HomeRe
 import com.george_georgy.eldokana.feature_home_products.domain.use_case.GetCategoriesUseCase
 import com.george_georgy.eldokana.feature_home_products.domain.use_case.GetProductsUseCase
 import com.george_georgy.eldokana.feature_home_products.presentation.home_lists.HomeViewModel
+import com.george_georgy.eldokana.feature_profile.data.repository.ProfileRepository
+import com.george_georgy.eldokana.feature_profile.presentation.ProfileViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -15,9 +17,14 @@ val homeModule = module {
         HomeApiImpl(get())
     }
 
-    // HomeRepository Repository instance
+    // HomeRepository  instance
     single<HomeRepository> {
         HomeRepositoryImpl(get())
+    }
+
+    // ProfileRepository  instance
+    single {
+        ProfileRepository(get())
     }
 
     // GetCategoriesUseCase instance
@@ -33,6 +40,11 @@ val homeModule = module {
     // CategoryViewModel instance
     viewModel {
         HomeViewModel(get(), get())
+    }
+
+    // profileViewModel instance
+    viewModel {
+        ProfileViewModel(get(),get())
     }
 
 

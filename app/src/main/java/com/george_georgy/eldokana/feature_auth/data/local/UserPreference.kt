@@ -15,6 +15,8 @@ class UserPreference(
     private val userDataStore: DataStore<Preferences>,
     private val gson: Gson
 ) {
+
+    // saving and getting Token from datastore
     suspend fun saveUserToken(userToken: String?) {
         userDataStore.edit { preferences ->
             preferences[USER_AUTH_KEY] = userToken?: ""
@@ -34,6 +36,7 @@ class UserPreference(
         }
     }
 
+    // saving and getting user data from datastore
     suspend fun saveUserdata(user: UserDto) {
         userDataStore.edit { preferences ->
             preferences[USER_DATA_KEY] = gson.toJson(user)

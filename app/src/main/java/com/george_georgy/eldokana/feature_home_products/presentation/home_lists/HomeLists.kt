@@ -32,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryLight
+import com.george_georgy.eldokana.core.utils.LoadingAnimationWithDots
 import com.george_georgy.eldokana.feature_home_products.domain.model.Product
 import com.george_georgy.eldokana.feature_home_products.presentation.components.ProductListItem
 import org.koin.androidx.compose.getViewModel
@@ -119,9 +120,8 @@ fun HomeLists(
         }
 
         if (productState.isLoading) {
-            CircularProgressIndicator(
+            LoadingAnimationWithDots(
                 modifier = Modifier.align(Alignment.Center),
-                color = PrimaryDark
             )
 
         }

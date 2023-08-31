@@ -44,7 +44,7 @@ fun DokanaTopAppBar(
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.logo),
+            painter = painterResource(id = R.drawable.logo2),
             modifier = Modifier
                 .padding(end = 8.dp)
                 .size(35.dp),

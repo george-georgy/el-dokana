@@ -75,7 +75,7 @@ fun SplashScreen(
             Icon(
                 modifier = Modifier.padding(24.dp)
                     .size(55.dp),
-                painter = painterResource(id = R.drawable.logo),
+                painter = painterResource(id = R.drawable.logo2),
                 contentDescription = null,
                 tint = Color.White
             )

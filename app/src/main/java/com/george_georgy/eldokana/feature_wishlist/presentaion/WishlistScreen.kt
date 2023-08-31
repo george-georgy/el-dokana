@@ -53,7 +53,6 @@ fun WishlistScreen(
     viewModel: WishlistViewModel = getViewModel(),
     onClickWishItem: (Wish) -> Unit,
     onBackArrowIcon: () -> Unit,
-
     ) {
 
 
@@ -76,7 +75,7 @@ fun WishlistScreen(
 
         snackbarHost = { SnackbarHost(snackbarHostState) }, topBar = {
             TopAppBar(
-                modifier = Modifier.padding(top = 12.dp, start = 16.dp, end = 16.dp),
+                modifier = Modifier.padding(top = 8.dp, start = 16.dp, end = 16.dp),
                 navigationIcon = {
                     IconButton(
                         modifier = Modifier
@@ -172,8 +171,8 @@ fun WishlistScreen(
                 )
                 Text(
                     modifier = Modifier.fillMaxWidth(),
-                    text = "Your wishlist is lonely. Add items to start shopping",
-                    fontSize = 16.sp,
+                    text = "Your wishlist is lonely.\nAdd items to start shopping",
+                    fontSize = 18.sp,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold
 

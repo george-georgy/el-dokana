@@ -28,9 +28,7 @@ fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
 
                     onCartButtonClick = {
                        // navController.navigate(HomeRoutes.CartScreen.route)
-
-
-                    }
+                    },
                 )
             }
         }

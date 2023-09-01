@@ -20,7 +20,7 @@ fun HomeNavGraph(navController: NavHostController) {
     ) {
         composable(BottomBarRoutes.Home.route) {
             DashboardScreen(
-                onItemDetails = {product ->
+                onItemDetails = { product ->
                     navController.currentBackStackEntry?.savedStateHandle?.set(
                         key = "product",
                         value = product
@@ -52,7 +52,11 @@ fun HomeNavGraph(navController: NavHostController) {
 
         composable(BottomBarRoutes.Profile.route) {
 
-            ProfileScreen()
+            ProfileScreen(
+                onBackArrowIcon = {
+                    navController.popBackStack()
+                }
+            )
 
         }
 

@@ -116,7 +116,8 @@ fun WishlistScreen(
                             contentDescription = "",
                         )
                     }
-                })
+                }
+            )
         }) { paddingValues ->
 
         Box(

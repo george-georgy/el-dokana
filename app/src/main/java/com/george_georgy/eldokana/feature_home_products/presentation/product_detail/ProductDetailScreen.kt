@@ -156,6 +156,7 @@ fun ProductDetailScreen(
                     }
                 )
             },
+
             floatingActionButton = {
                 FloatingActionButton(
                     onClick = onCartButtonClick,
@@ -172,6 +173,8 @@ fun ProductDetailScreen(
                     )
                 }
             },
+
+
         ) {
 
             Column(
@@ -247,7 +250,7 @@ fun ProductDetailScreen(
                                     textAlign = TextAlign.Start
                                 )
 
-                                RatingItem(productRatingCount = product.rating.count)
+                                RatingItem(productRatingCount = product.rating.rate)
 
                             }
                         }
@@ -263,6 +266,10 @@ fun ProductDetailScreen(
                     }
 
                     Spacer(modifier = Modifier.weight(1f))
+
+
+
+
 
                 }
             }

@@ -2,6 +2,7 @@ package com.george_georgy.eldokana.feature_home_products.presentation.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -44,7 +46,8 @@ fun ProductListItem(
 
     ) {
         Column(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth()
+            .padding(8.dp),
         ) {
             GlideImage(
                 model = product.image,
@@ -64,10 +67,21 @@ fun ProductListItem(
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Start,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(start = 8.dp , 4.dp)
+                modifier = Modifier.padding(start = 8.dp, 4.dp)
             )
 
-            RatingItem(product.rating.count)
+
+            Text(
+                text = product.category,
+                color = Gray,
+                textAlign = TextAlign.Start,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 8.dp, end = 8.dp),
+
+                )
+
+            RatingItem(product.rating.rate)
 
             Text(
                 text = product.price.toString() + " L.E",

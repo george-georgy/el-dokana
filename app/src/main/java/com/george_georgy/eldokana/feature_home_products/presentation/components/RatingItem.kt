@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.george_georgy.eldokana.core.presentation.ui.theme.PrimaryDark
 
 @Composable
-fun RatingItem(productRatingCount: Int) {
+fun RatingItem(productRatingCount: Double) {
     Row(
         modifier = Modifier.padding(4.dp)
             .fillMaxWidth(),
